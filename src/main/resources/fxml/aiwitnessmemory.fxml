@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+
+<!-- Restructured: Chat on right, document on left -->
+<HBox prefWidth="900.0" prefHeight="600.0" spacing="0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.AiWitnessMemoryController">
+  <!-- Left: Virtual File Explorer -->
+  <VBox alignment="TOP_LEFT" prefWidth="600.0" prefHeight="600.0" style="-fx-background-color: #2d2d2d;">
+    <Label text="AI Archive System - Defendant History" style="-fx-text-fill: white; -fx-font-size: 16; -fx-padding: 10 0 0 10;" />
+    <HBox spacing="10" style="-fx-padding: 5 10 5 10;">
+      <Label text="Path:" style="-fx-text-fill: white;" />
+      <Label fx:id="lblCurrentPath" text="/archive/defendant_001/" style="-fx-text-fill: #00ff00; -fx-font-family: monospace;" />
+    </HBox>
+    
+    <!-- File Explorer Tree View -->
+    <ScrollPane fitToWidth="true" prefHeight="300" vbarPolicy="AS_NEEDED" hbarPolicy="AS_NEEDED" style="-fx-background: #2d2d2d; -fx-border-color: #555;" VBox.vgrow="NEVER">
+      <content>
+        <TreeView fx:id="fileTreeView" style="-fx-background-color: #2d2d2d; -fx-text-fill: white;" />
+      </content>
+    </ScrollPane>
+    
+    <!-- File Content Viewer -->
+    <Label text="File Content:" style="-fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 0 0 10;" />
+    <ScrollPane fitToWidth="true" fitToHeight="true" vbarPolicy="ALWAYS" hbarPolicy="AS_NEEDED" 
+                style="-fx-background: black; -fx-border-color: #555;" VBox.vgrow="ALWAYS"
+                minHeight="220" prefHeight="220" maxHeight="220">
+      <content>
+        <AnchorPane minHeight="200" prefHeight="200" maxHeight="200">
+          <TextArea fx:id="txtFileContent" editable="false" wrapText="true" style="-fx-control-inner-background: black; -fx-text-fill: #00ff00; -fx-font-size: 12; -fx-font-family: monospace;" 
+                    AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" />
+          <ImageView fx:id="imgFileViewer" visible="false" preserveRatio="true" smooth="true"
+                     fitWidth="350" fitHeight="200"
+                     AnchorPane.topAnchor="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="75" AnchorPane.rightAnchor="75" />
+        </AnchorPane>
+      </content>
+    </ScrollPane>
+  </VBox>
+
+  <!-- Right: AI Chat Interface -->
+  <VBox alignment="TOP_CENTER" prefWidth="300.0" prefHeight="600.0" spacing="0" style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-width: 0 0 0 1;">
+    <!-- AI Profile Header -->
+    <VBox alignment="CENTER" spacing="3" style="-fx-background-color: #f8f9fa; -fx-padding: 8; -fx-border-color: #ddd; -fx-border-width: 0 0 1 0;">
+      <ImageView fx:id="imgAvatar" fitHeight="40" fitWidth="40" preserveRatio="true" />
+      <Label fx:id="lblName" style="-fx-font-weight: bold; -fx-font-size: 14; -fx-text-fill: #333;" text="Archive AI" />
+      <Label text="🤖 AI Witness" style="-fx-font-size: 10; -fx-text-fill: #666;" />
+      <Label fx:id="timerLabel" text="●" style="-fx-font-size: 16; -fx-text-fill: red; -fx-font-weight: bold;" />
+    </VBox>
+    
+    <!-- Chat Area -->
+    <VBox spacing="0" VBox.vgrow="ALWAYS" style="-fx-padding: 0;">
+      <ScrollPane fx:id="chatScrollPane" prefHeight="450.0" prefWidth="200.0" 
+                  style="-fx-background: #e5ddd5; -fx-background-color: #e5ddd5; -fx-border-color: transparent;" 
+                  fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+        <content>
+          <VBox fx:id="chatContainer" spacing="6" style="-fx-padding: 10; -fx-background-color: #e5ddd5;" />
+        </content>
+      </ScrollPane>
+      
+      <!-- Input Area -->
+      <VBox spacing="8" style="-fx-padding: 12; -fx-background-color: white; -fx-border-color: #ddd; -fx-border-width: 1 0 0 0;">
+        <TextField fx:id="txtInput" prefHeight="40.0" prefWidth="275.0" promptText="Type a message..." 
+                   style="-fx-font-size: 13; -fx-background-color: #f8f9fa; -fx-border-color: #ddd; -fx-border-radius: 20; -fx-background-radius: 20; -fx-padding: 10 15 10 15;" />
+        <HBox spacing="8" alignment="CENTER">
+          <Button fx:id="btnSend" mnemonicParsing="false" onAction="#onSendMessage" text="Send" 
+                  prefWidth="80.0" prefHeight="32.0" style="-fx-background-color: #0084ff; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-weight: bold;" />
+          <Button mnemonicParsing="false" onAction="#onGoBack" text="Exit" 
+                  prefWidth="80.0" prefHeight="32.0" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 16; -fx-border-radius: 16; -fx-font-weight: bold;" />
+        </HBox>
+      </VBox>
+    </VBox>
+  </VBox>
+</HBox>

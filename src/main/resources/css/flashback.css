@@ -1,0 +1,28 @@
+/* ===== Global font ===== */
+.root {
+  -fx-font-family: "Arial";
+}
+
+/* ===== Buttons (default) ===== */
+/* Next button */
+#btnNext {
+  -fx-background-color: #adcded;
+  /* light grey */
+  -fx-text-fill: black;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 6;
+  -fx-padding: 6 12;
+  -fx-cursor: hand;
+  -fx-border-color: #2c3e50;
+  -fx-border-width: 3px;
+  -fx-border-radius: 8;
+}
+
+#btnNext:hover {
+  -fx-background-color: #75b0eb;
+}
+
+#btnNext:pressed {
+  -fx-background-color: #4585c4;
+}

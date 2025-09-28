@@ -1,0 +1,63 @@
+/* ===== Global font ===== */
+.root {
+  -fx-font-family: "Arial";
+}
+
+/* ===== Buttons (default) ===== */
+.button {
+  -fx-background-color: linear-gradient(to bottom, #c8ded2, #8bad9a);
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-background-radius: 8;
+  -fx-padding: 6 14;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.3, 0, 2);
+}
+
+.button:hover {
+  -fx-background-color: linear-gradient(to bottom, #8c9c93, #52665b);
+}
+
+.button:pressed {
+  -fx-background-color: linear-gradient(to bottom, #9bc7ba, #65827a);
+}
+
+/* ===== Pagination ===== */
+.pagination .button {
+  -fx-background-radius: 3;
+  -fx-padding: 4 10;
+}
+
+.pagination .label {
+  -fx-text-fill: #333;
+  -fx-font-size: 12px;
+}
+
+/* ===== TextField ===== */
+.text-field {
+  -fx-background-color: #f9f9ff;
+  -fx-background-radius: 6;
+  -fx-border-color: #69512e;
+  -fx-border-radius: 3;
+  -fx-border-width: 3;
+  -fx-padding: 6;
+  -fx-font-size: 13px;
+}
+
+.text-field:focused {
+  -fx-border-color: #69512e;
+  -fx-border-width: 4;
+  -fx-background-color: #f9f9ff;
+}
+
+/* ===== TextArea ===== */
+.text-area {
+  -fx-background-color: #dbd3c8;
+  -fx-background-radius: 8;
+  -fx-border-color: #69512e;
+  -fx-border-radius: 8;
+  -fx-border-width: 4;
+  -fx-padding: 6;
+  -fx-font-size: 13px;
+}

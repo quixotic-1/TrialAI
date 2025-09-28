@@ -1,0 +1,98 @@
+/* General background */
+.root {
+  -fx-background-color: linear-gradient(to bottom right, #a8dadc, #f4e1c1);
+}
+
+/* Chat output area */
+#txtaChat {
+  -fx-control-inner-background: linear-gradient(to bottom, #fff8e7, #f1e2c9);
+  -fx-text-fill: #6b4226;
+  -fx-font-family: "Comic Sans MS", cursive, sans-serif;
+  -fx-font-size: 14px;
+
+  -fx-background-insets: 0;
+  -fx-background-radius: 15;
+  -fx-border-color: #d9b382;
+  -fx-border-width: 3;
+  -fx-border-radius: 15;
+  -fx-effect: dropshadow(gaussian, rgba(217, 179, 130, 0.5), 10, 0.5, 0, 0);
+}
+
+/* Input field */
+#txtInput {
+  -fx-background-color: linear-gradient(to bottom, #fff3c4, #ffe6b3);
+  -fx-text-fill: #654135ff; /* typed text */
+  -fx-prompt-text-fill: #a87b5c; /* prompt text */
+  -fx-font-family: "Comic Sans MS", cursive, sans-serif;
+  -fx-font-size: 14px;
+
+  -fx-background-insets: 0;
+  -fx-background-radius: 12;
+  -fx-border-color: #d9b382;
+  -fx-border-width: 3;
+  -fx-border-radius: 12;
+  -fx-effect: dropshadow(gaussian, rgba(217, 179, 130, 0.5), 12, 0.5, 0, 0);
+}
+
+/* Back button */
+#btnBack {
+  -fx-background-color: linear-gradient(to bottom, #fceabb, #f4d3a2);
+  -fx-text-fill: #2f3e46;
+  -fx-font-family: "Comic Sans MS", cursive, sans-serif;
+  -fx-font-size: 13px;
+  -fx-border-color: #c9a66b;
+  -fx-border-width: 2;
+  -fx-border-radius: 10;
+  -fx-background-radius: 10;
+  -fx-effect: dropshadow(gaussian, rgba(201, 166, 107, 0.5), 8, 0.5, 0, 0);
+  -fx-padding: 5 15 5 15;
+  -fx-margin-right: 5; /* Space before send button */
+}
+
+/* Send button */
+#btnSend {
+  -fx-background-color: linear-gradient(to bottom, #ffd89b, #f4c27a);
+  -fx-text-fill: #2f3e46;
+  -fx-font-family: "Comic Sans MS", cursive, sans-serif;
+  -fx-font-size: 13px;
+  -fx-border-color: #c98b3f;
+  -fx-border-width: 2;
+  -fx-border-radius: 6; /* Slightly less rounded */
+  -fx-background-radius: 6;
+  -fx-effect: dropshadow(gaussian, rgba(201, 139, 63, 0.6), 8, 0.5, 0, 0);
+  -fx-padding: 5 15 5 15;
+}
+
+#btnBack:hover {
+  -fx-background-color: linear-gradient(to bottom, #fdeca0, #f6d39c);
+  -fx-effect: dropshadow(gaussian, rgba(201, 166, 107, 0.7), 10, 0.5, 0, 0);
+}
+
+#btnSend:hover {
+  -fx-background-color: linear-gradient(to bottom, #ffe0a0, #f5b96f);
+  -fx-effect: dropshadow(gaussian, rgba(201, 139, 63, 0.8), 10, 0.5, 0, 0);
+  -fx-cursor: hand; /* optional, makes it feel clickable */
+}
+
+/* TextAreas */
+.text-area {
+  -fx-background-color: #fff8e7;
+  -fx-background-radius: 18px;
+  -fx-border-radius: 18px;
+  -fx-border-color: #d9b382;
+  -fx-border-width: 3;
+  -fx-font-size: 14px;
+  -fx-padding: 10px;
+  -fx-text-fill: #6b4226;
+}
+
+.text-area:focused {
+  -fx-border-color: #d9b382;
+  -fx-effect: dropshadow(gaussian, rgba(217, 179, 130, 0.5), 12, 0.5, 0, 0);
+}
+
+/* Fix inner content to respect rounded corners */
+.text-area .content {
+  -fx-background-insets: 0;
+  -fx-background-radius: 18px;
+}

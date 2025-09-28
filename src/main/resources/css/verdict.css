@@ -1,0 +1,91 @@
+/* Global Pane background */
+#paneRoot {
+  -fx-background-color: linear-gradient(to bottom right, #2e1f1c, #3b2a28, #4a3b36);
+  -fx-padding: 20px;
+  -fx-font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+}
+
+/* Title label */
+#verdictLabel {
+  -fx-text-fill: #d2b48c;
+  -fx-font-weight: bold;
+}
+
+/* Instruction label */
+#verdictLabel1 {
+  -fx-text-fill: #bfa27a;
+}
+
+/* Timer label */
+#verdictTimerLabel {
+  -fx-text-fill: #ffffff;
+  -fx-font-size: 28px;
+  -fx-font-weight: bold;
+}
+
+/* Buttons */
+.button {
+  -fx-background-color: linear-gradient(to bottom, #3b2a28, #2e1f1c); /* dark brown gradient */
+  -fx-text-fill: #f5f5dc; /* beige text */
+  -fx-font-weight: bold;
+  -fx-background-radius: 18px;
+  -fx-border-radius: 18px;
+  -fx-border-color: #5c4033;
+  -fx-border-width: 2px;
+  -fx-cursor: hand;
+  -fx-padding: 8px 15px;
+  -fx-font-size: 18px;
+}
+
+.button:hover {
+  -fx-background-color: linear-gradient(to bottom, #4a3b36, #3b2a28);
+}
+
+/* Guilty button */
+#btnGuilty {
+  -fx-background-color: linear-gradient(to bottom, #8b0000, #5c0000);
+  -fx-border-color: #b22222;
+  -fx-text-fill: #fff5f5;
+}
+
+#btnGuilty:hover {
+  -fx-background-color: linear-gradient(to bottom, #a52a2a, #8b0000);
+}
+
+/* Not Guilty button */
+#btnNotGuilty {
+  -fx-background-color: linear-gradient(to bottom, #1e3f66, #14273d);
+  -fx-border-color: #4682b4;
+  -fx-text-fill: #e6f0fa;
+}
+
+#btnNotGuilty:hover {
+  -fx-background-color: linear-gradient(to bottom, #2e5984, #1e3f66);
+}
+
+/* Done button */
+#btnDone {
+  -fx-background-color: linear-gradient(to bottom, #4b3b47, #352836);
+  -fx-border-color: #6a5acd;
+  -fx-text-fill: #e6e6fa;
+  -fx-font-weight: bold;
+}
+
+#btnDone:hover {
+  -fx-background-color: linear-gradient(to bottom, #5a4757, #4b3b47);
+}
+
+/* TextAreas */
+.text-area {
+  -fx-background-color: #2e1f1c;
+  -fx-background-radius: 18px;
+  -fx-border-radius: 18px;
+  -fx-border-color: #5c4033;
+  -fx-border-width: 2px;
+  -fx-font-size: 14px;
+  -fx-padding: 10px;
+}
+
+.text-area:focused {
+  -fx-border-color: #d2b48c;
+}
